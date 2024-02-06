@@ -26,7 +26,6 @@ while True:
         child.expect('#')
         print(child.before.decode())
 
-        # Disconnect
         child.sendline('exit')
         child.expect(pexpect.EOF)
 
