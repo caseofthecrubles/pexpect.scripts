@@ -28,7 +28,6 @@ for host in list_of_hosts:
         child.expect('rkscli:')
         before_decode = (child.before.decode())
         beforestr = str(before_decode)
-        #before_out = beforestr.splitlines(" ")
 
         lines = beforestr.splitlines()
         count = (lines[2])
@@ -37,9 +36,7 @@ for host in list_of_hosts:
         client_count = (countsplt[2])
         globalcc += int(client_count)
         #print(str(before_out))
-
-        #print(str(before_out[7]))
-
+        
         # Disconnect
         child.sendline('exit')
         child.expect(pexpect.EOF)
@@ -48,4 +45,3 @@ for host in list_of_hosts:
         print(f"An unexpected error occurred: {e}")
 
 print(globalcc)
-~                  
